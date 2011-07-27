@@ -14,8 +14,8 @@ public class HomeControllerTest {
 		Model model = new ExtendedModelMap();
 		Assert.assertEquals("home",controller.home(model));
 		
-		Object message = model.asMap().get("controllerMessage");
-		Assert.assertEquals("This is the message from the controller!",message);
+		Object message = model.asMap().get("test");
+		Assert.assertEquals("test", message);
 		
 	}
 }

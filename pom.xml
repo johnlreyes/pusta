@@ -116,12 +116,19 @@
 		</dependency>
 
 		<!-- View Dependencies -->
+		<!-- not needed, using freemarker
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.16</version>
 		</dependency>
 
 
