@@ -1,0 +1,252 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="
+		http://www.liquibase.org/xml/ns/dbchangelog 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	
+	<changeSet id="1.1" author="john">
+		<createTable tableName="game_combination">
+			<column name="id" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="game_type_id" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="number" type="int">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="1.2" author="john">
+		<addForeignKeyConstraint 
+			constraintName="fk_game_combination_game_type"
+			baseTableName="game_combination" 
+			baseColumnNames="game_type_id"
+			referencedTableName="game_type" 
+			referencedColumnNames="id"
+		/>
+	</changeSet>
+	<changeSet id="1.3" author="john">
+		<addUniqueConstraint 
+			tableName="game_combination"
+			columnNames="game_type_id, number"
+			constraintName="u_game_combination_game_type_id_number"/>
+	</changeSet>
+	<changeSet id="1.4" author="john">
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="1"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="1" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="2"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="2" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="3"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="3" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="4"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="4" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="5"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="5" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="6"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="6" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="7"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="7" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="8"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="8" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="9"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="9" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="10"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="10" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="11"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="11" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="12"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="12" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="13"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="13" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="14"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="14" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="15"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="15" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="16"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="16" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="17"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="17" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="18"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="18" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="19"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="19" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="20"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="20" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="21"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="21" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="22"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="22" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="23"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="23" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="24"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="24" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="25"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="25" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="26"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="26" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="27"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="27" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="28"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="28" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="29"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="29" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="30"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="30" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="31"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="31" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="32"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="32" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="33"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="33" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="34"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="34" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="35"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="35" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="36"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="36" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="37"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="37" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="38"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="38" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="39"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="39" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="40"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="40" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="41"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="41" />			
+		</insert>
+		<insert tableName="game_combination">
+			<column name="id" valueNumeric="42"/>
+			<column name="game_type_id" valueNumeric="1"/>
+			<column name="number" valueNumeric="42" />			
+		</insert>
+	</changeSet>
+</databaseChangeLog>

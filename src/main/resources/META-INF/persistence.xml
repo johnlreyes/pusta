@@ -5,14 +5,15 @@
       http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
 
-	<persistence-unit name="acme" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="pusta" transaction-type="RESOURCE_LOCAL">
+		<class>per.pusta.service.impl.jpa.GameType</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.transaction.flush_before_completion"
 				value="true" />
 			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
-		</properties>
+		</properties>		
 	</persistence-unit>
 
 </persistence>

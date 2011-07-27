@@ -1,0 +1,47 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="
+		http://www.liquibase.org/xml/ns/dbchangelog 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	
+	<changeSet id="5.1" author="john">
+		<createTable tableName="draw_history">
+			<column name="id" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="game_type_id" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="draw_schedule" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="date_checked" type="timestamp">
+				<constraints nullable="false" />
+			</column>
+			<column name="no1" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no2" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no3" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no4" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no5" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no6" type="int">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+</databaseChangeLog>

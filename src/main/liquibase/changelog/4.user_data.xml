@@ -1,0 +1,110 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="
+		http://www.liquibase.org/xml/ns/dbchangelog 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	
+	<changeSet id="4.1" author="john">
+		<createTable tableName="user_data">
+			<column name="id" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="user_id" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="game_type_id" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="draw_date" type="timestamp">
+				<constraints nullable="false" />
+			</column>
+			<column name="no1" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no2" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no3" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no4" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no5" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="no6" type="int">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="4.2" author="john">
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_user_id_user_id"
+			baseTableName="user_data" 
+			baseColumnNames="user_id"
+			referencedTableName="user" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_game_type_id_game_type_id"
+			baseTableName="user_data" 
+			baseColumnNames="game_type_id"
+			referencedTableName="game_type" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_no1_game_combination_id"
+			baseTableName="user_data" 
+			baseColumnNames="no1"
+			referencedTableName="game_combination" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_no2_game_combination_id"
+			baseTableName="user_data" 
+			baseColumnNames="no2"
+			referencedTableName="game_combination" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_no3_game_combination_id"
+			baseTableName="user_data" 
+			baseColumnNames="no3"
+			referencedTableName="game_combination" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_no4_game_combination_id"
+			baseTableName="user_data" 
+			baseColumnNames="no4"
+			referencedTableName="game_combination" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_no5_game_combination_id"
+			baseTableName="user_data" 
+			baseColumnNames="no5"
+			referencedTableName="game_combination" 
+			referencedColumnNames="id"
+		/>
+		<addForeignKeyConstraint 
+			constraintName="fk_user_data_no6_game_combination_id"
+			baseTableName="user_data" 
+			baseColumnNames="no6"
+			referencedTableName="game_combination" 
+			referencedColumnNames="id"
+		/>
+	</changeSet>
+	<changeSet id="4.3" author="john">
+		<addUniqueConstraint 
+			tableName="user_data"
+			columnNames="user_id,game_type_id,draw_date,no1,no2,no3,no4,no5,no6"
+			constraintName="u_game_combination_per_user_per_date"/>
+	</changeSet>
+</databaseChangeLog>

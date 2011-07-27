@@ -1,0 +1,29 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="
+		http://www.liquibase.org/xml/ns/dbchangelog 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	
+	<changeSet id="0.1" author="john">
+		<createTable tableName="game_type">
+			<column name="id" type="int">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="game" type="varchar(255)">
+				<constraints unique="true" nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="0.2" author="john">
+		<insert tableName="game_type">
+			<column name="id" valueNumeric="1"/>
+			<column name="game" value="6/42 Combination"/>
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>
