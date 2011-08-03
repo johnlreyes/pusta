@@ -23,6 +23,9 @@
 			<column name="password" type="varchar(255)">
 				<constraints nullable="false" />
 			</column>
+            <column name="access" type="int" defaultValueNumeric="2">
+				<constraints nullable="false" />
+			</column>
 		</createTable>
 	</changeSet>
     <changeSet id="3.2" author="john">
