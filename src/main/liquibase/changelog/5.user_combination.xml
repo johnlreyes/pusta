@@ -10,11 +10,11 @@
 
 	
 	<changeSet id="5.1" author="john">
-		<createTable tableName="draw_history">
+		<createTable tableName="user_combination">
 			<column name="id" type="int">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="user_data_id" type="int">
+			<column name="user_draw_id" type="int">
 				<constraints nullable="false" />
 			</column>
 			<column name="game_combination_id" type="int">
@@ -24,22 +24,22 @@
 	</changeSet>
     <changeSet id="5.2" author="john">
 		<createSequence
-			sequenceName="seq_draw_history"
+			sequenceName="seq_user_combination"
 			incrementBy="1"
 			startValue="1"
 		/>
 	</changeSet>
     <changeSet id="5.3" author="john">
 		<addForeignKeyConstraint
-			constraintName="fk_draw_history_user_data_id"
-			baseTableName="draw_history"
-			baseColumnNames="user_data_id"
-			referencedTableName="user_data"
+			constraintName="fk_user_combination_user_draw_id"
+			baseTableName="user_combination"
+			baseColumnNames="user_draw_id"
+			referencedTableName="user_draw"
 			referencedColumnNames="id"
 		/>
         <addForeignKeyConstraint
-			constraintName="fk_draw_history_game_combination_id"
-			baseTableName="draw_history"
+			constraintName="fk_user_combination_game_combination_id"
+			baseTableName="user_combination"
 			baseColumnNames="game_combination_id"
 			referencedTableName="game_combination"
 			referencedColumnNames="id"
@@ -47,8 +47,8 @@
 	</changeSet>
     <changeSet id="5.4" author="john">
 		<addUniqueConstraint
-			tableName="draw_history"
-			columnNames="user_data_id,game_combination_id"
-			constraintName="u_draw_history"/>
+			tableName="user_combination"
+			columnNames="user_draw_id,game_combination_id"
+			constraintName="u_draw_combination"/>
 	</changeSet>
 </databaseChangeLog>

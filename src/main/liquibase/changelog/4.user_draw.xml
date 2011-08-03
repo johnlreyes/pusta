@@ -10,7 +10,7 @@
 
 	
 	<changeSet id="4.1" author="john">
-		<createTable tableName="user_data">
+		<createTable tableName="user_draw">
 			<column name="id" type="int">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
@@ -27,22 +27,22 @@
 	</changeSet>
     <changeSet id="4.2" author="john">
 		<createSequence
-			sequenceName="seq_user_data"
+			sequenceName="seq_user_draw"
 			incrementBy="1"
 			startValue="1"
 		/>
 	</changeSet>
 	<changeSet id="4.3" author="john">
 		<addForeignKeyConstraint 
-			constraintName="fk_user_data_user_id_user_id"
-			baseTableName="user_data" 
+			constraintName="fk_user_draw_user_id_user_id"
+			baseTableName="user_draw"
 			baseColumnNames="user_id"
 			referencedTableName="user" 
 			referencedColumnNames="id"
 		/>
 		<addForeignKeyConstraint 
-			constraintName="fk_user_data_game_type_id_game_type_id"
-			baseTableName="user_data" 
+			constraintName="fk_user_draw_game_type_id_game_type_id"
+			baseTableName="user_draw"
 			baseColumnNames="game_type_id"
 			referencedTableName="game_type" 
 			referencedColumnNames="id"
@@ -50,7 +50,7 @@
 	</changeSet>
 	<changeSet id="4.4" author="john">
 		<addUniqueConstraint 
-			tableName="user_data"
+			tableName="user_draw"
 			columnNames="user_id,game_type_id,draw_date"
 			constraintName="u_game_combination_per_user_per_date"/>
 	</changeSet>

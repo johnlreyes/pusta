@@ -13,8 +13,8 @@
 	<include file="src/main/liquibase/changelog/1.game_combination.xml" />
 	<include file="src/main/liquibase/changelog/2.draw_schedule.xml" />
 	<include file="src/main/liquibase/changelog/3.user.xml" />
-	<include file="src/main/liquibase/changelog/4.user_data.xml" />
+	<include file="src/main/liquibase/changelog/4.user_draw.xml" />
 	
-	<include file="src/main/liquibase/changelog/5.draw_history.xml" />
+	<include file="src/main/liquibase/changelog/5.user_combination.xml" />
 
 </databaseChangeLog>
