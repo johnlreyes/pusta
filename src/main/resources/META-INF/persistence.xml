@@ -6,7 +6,7 @@
 	version="1.0">
 
 	<persistence-unit name="pusta" transaction-type="RESOURCE_LOCAL">
-		<class>per.pusta.service.impl.jpa.GameType</class>
+		<class>per.pusta.service.impl.jpa.model.GameType</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.show_sql" value="true" />
