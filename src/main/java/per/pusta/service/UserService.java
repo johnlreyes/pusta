@@ -6,6 +6,6 @@ import org.slf4j.LoggerFactory;
 public interface UserService {
 
 	boolean existing(String email);
-	boolean register(String email, String password);
+	void register(String name, String email, String password);
 	void login(String email, String password);
 }
