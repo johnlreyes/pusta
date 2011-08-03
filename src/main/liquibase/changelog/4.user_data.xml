@@ -23,27 +23,16 @@
 			<column name="draw_date" type="timestamp">
 				<constraints nullable="false" />
 			</column>
-			<column name="no1" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no2" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no3" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no4" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no5" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no6" type="int">
-				<constraints nullable="false" />
-			</column>
 		</createTable>
 	</changeSet>
-	<changeSet id="4.2" author="john">
+    <changeSet id="4.2" author="john">
+		<createSequence
+			sequenceName="seq_user_data"
+			incrementBy="1"
+			startValue="1"
+		/>
+	</changeSet>
+	<changeSet id="4.3" author="john">
 		<addForeignKeyConstraint 
 			constraintName="fk_user_data_user_id_user_id"
 			baseTableName="user_data" 
@@ -58,53 +47,11 @@
 			referencedTableName="game_type" 
 			referencedColumnNames="id"
 		/>
-		<addForeignKeyConstraint 
-			constraintName="fk_user_data_no1_game_combination_id"
-			baseTableName="user_data" 
-			baseColumnNames="no1"
-			referencedTableName="game_combination" 
-			referencedColumnNames="id"
-		/>
-		<addForeignKeyConstraint 
-			constraintName="fk_user_data_no2_game_combination_id"
-			baseTableName="user_data" 
-			baseColumnNames="no2"
-			referencedTableName="game_combination" 
-			referencedColumnNames="id"
-		/>
-		<addForeignKeyConstraint 
-			constraintName="fk_user_data_no3_game_combination_id"
-			baseTableName="user_data" 
-			baseColumnNames="no3"
-			referencedTableName="game_combination" 
-			referencedColumnNames="id"
-		/>
-		<addForeignKeyConstraint 
-			constraintName="fk_user_data_no4_game_combination_id"
-			baseTableName="user_data" 
-			baseColumnNames="no4"
-			referencedTableName="game_combination" 
-			referencedColumnNames="id"
-		/>
-		<addForeignKeyConstraint 
-			constraintName="fk_user_data_no5_game_combination_id"
-			baseTableName="user_data" 
-			baseColumnNames="no5"
-			referencedTableName="game_combination" 
-			referencedColumnNames="id"
-		/>
-		<addForeignKeyConstraint 
-			constraintName="fk_user_data_no6_game_combination_id"
-			baseTableName="user_data" 
-			baseColumnNames="no6"
-			referencedTableName="game_combination" 
-			referencedColumnNames="id"
-		/>
 	</changeSet>
-	<changeSet id="4.3" author="john">
+	<changeSet id="4.4" author="john">
 		<addUniqueConstraint 
 			tableName="user_data"
-			columnNames="user_id,game_type_id,draw_date,no1,no2,no3,no4,no5,no6"
+			columnNames="user_id,game_type_id,draw_date"
 			constraintName="u_game_combination_per_user_per_date"/>
 	</changeSet>
 </databaseChangeLog>

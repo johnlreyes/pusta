@@ -14,34 +14,41 @@
 			<column name="id" type="int">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="game_type_id" type="int">
+			<column name="user_data_id" type="int">
 				<constraints nullable="false" />
 			</column>
-			<column name="draw_schedule" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="date_checked" type="timestamp">
-				<constraints nullable="false" />
-			</column>
-			<column name="no1" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no2" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no3" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no4" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no5" type="int">
-				<constraints nullable="false" />
-			</column>
-			<column name="no6" type="int">
+			<column name="game_combination_id" type="int">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
 	</changeSet>
-	
+    <changeSet id="5.2" author="john">
+		<createSequence
+			sequenceName="seq_draw_history"
+			incrementBy="1"
+			startValue="1"
+		/>
+	</changeSet>
+    <changeSet id="5.3" author="john">
+		<addForeignKeyConstraint
+			constraintName="fk_draw_history_user_data_id"
+			baseTableName="draw_history"
+			baseColumnNames="user_data_id"
+			referencedTableName="user_data"
+			referencedColumnNames="id"
+		/>
+        <addForeignKeyConstraint
+			constraintName="fk_draw_history_game_combination_id"
+			baseTableName="draw_history"
+			baseColumnNames="game_combination_id"
+			referencedTableName="game_combination"
+			referencedColumnNames="id"
+		/>
+	</changeSet>
+    <changeSet id="5.4" author="john">
+		<addUniqueConstraint
+			tableName="draw_history"
+			columnNames="user_data_id,game_combination_id"
+			constraintName="u_draw_history"/>
+	</changeSet>
 </databaseChangeLog>

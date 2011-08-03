@@ -25,5 +25,12 @@
 			</column>
 		</createTable>
 	</changeSet>
+    <changeSet id="3.2" author="john">
+		<createSequence
+			sequenceName="seq_user"
+			incrementBy="1"
+			startValue="1"
+		/>
+	</changeSet>
 	
 </databaseChangeLog>

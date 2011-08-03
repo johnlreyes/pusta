@@ -22,7 +22,14 @@
 			</column>
 		</createTable>
 	</changeSet>
-	<changeSet id="1.2" author="john">
+    <changeSet id="1.2" author="john">
+		<createSequence
+			sequenceName="seq_game_combination"
+			incrementBy="1"
+			startValue="1"
+		/>
+	</changeSet>
+	<changeSet id="1.3" author="john">
 		<addForeignKeyConstraint 
 			constraintName="fk_game_combination_game_type"
 			baseTableName="game_combination" 
@@ -31,13 +38,13 @@
 			referencedColumnNames="id"
 		/>
 	</changeSet>
-	<changeSet id="1.3" author="john">
+	<changeSet id="1.4" author="john">
 		<addUniqueConstraint 
 			tableName="game_combination"
 			columnNames="game_type_id, number"
 			constraintName="u_game_combination_game_type_id_number"/>
 	</changeSet>
-	<changeSet id="1.4" author="john">
+	<changeSet id="1.5" author="john">
 		<insert tableName="game_combination">
 			<column name="id" valueNumeric="1"/>
 			<column name="game_type_id" valueNumeric="1"/>

@@ -20,6 +20,13 @@
 		</createTable>
 	</changeSet>
 	<changeSet id="0.2" author="john">
+		<createSequence
+			sequenceName="seq_game_type"
+			incrementBy="1"
+			startValue="1"
+		/>
+	</changeSet>
+	<changeSet id="0.3" author="john">
 		<insert tableName="game_type">
 			<column name="id" valueNumeric="1"/>
 			<column name="game" value="6/42 Combination"/>

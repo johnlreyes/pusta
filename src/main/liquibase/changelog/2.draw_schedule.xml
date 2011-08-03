@@ -43,7 +43,14 @@
 			</column>
 		</createTable>
 	</changeSet>
-	<changeSet id="2.2" author="john">
+    <changeSet id="2.2" author="john">
+		<createSequence
+			sequenceName="seq_draw_schedule"
+			incrementBy="1"
+			startValue="1"
+		/>
+	</changeSet>
+	<changeSet id="2.3" author="john">
 		<addForeignKeyConstraint 
 			constraintName="fk_draw_schedule_game_type"
 			baseTableName="draw_schedule" 
@@ -52,7 +59,7 @@
 			referencedColumnNames="id"
 		/>
 	</changeSet>
-	<changeSet id="2.3" author="john">
+	<changeSet id="2.4" author="john">
 		<insert tableName="draw_schedule">
 			<column name="id" valueNumeric="1"/>
 			<column name="game_type_id" valueNumeric="1"/>
