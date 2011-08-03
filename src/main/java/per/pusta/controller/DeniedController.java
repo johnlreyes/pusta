@@ -1,6 +1,5 @@
 package per.pusta.controller;
 
-import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -10,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import per.pusta.controller.util.MenuState;
 
 @Controller
-public class RegisterController {
+public class DeniedController {
 
-	private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
+	private static final Logger logger = LoggerFactory.getLogger(DeniedController.class);
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String registerForm(Model model) {
-		logger.info("Register");
+	@RequestMapping(value = "/denied", method = RequestMethod.GET)
+	public String loginForm(Model model) {
+		logger.info("Denied");
         MenuState menuState = new MenuState();
-        menuState.setRegister(true);
+        menuState.setDenied(true);
 
         model.addAttribute("menuState", menuState);
-		return "register";
+		return "denied";
 	}
 
 }

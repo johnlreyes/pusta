@@ -1,15 +1,37 @@
 <header>
 	<hgroup id="logo">
 		<h1><a href="#">Pusta</a></h1>
-		<h2>6/42 sa ta</h2>
+		<h2>hmmmmmmm</h2>
 	</hgroup>
 	<nav id="menu">
 		<ul>
-			<li class="first"><a href="#" accesskey="1" title="">Home</a></li>
-			<li><a href="#" accesskey="2" title="">1</a></li>
-			<li><a href="#" accesskey="3" title="">2</a></li>
-			<li><a href="#" accesskey="4" title="">3</a></li>
-			<li><a href="#" accesskey="5" title="">4</a></li>
+			<li class="first">
+                <a href="home" accesskey="2" title="home">
+                    <#if menuState.home>
+                        <div style="color:green">Home</div>
+                    <#else>
+                        Home
+                    </#if>
+                </a>
+            </li>
+			<li>
+                <a href="login" accesskey="2" title="login">
+                    <#if menuState.login>
+                        <div style="color:green">Login</div>
+                    <#else>
+                        Login
+                    </#if>
+                </a>
+            </li>
+			<li>
+                <a href="main" accesskey="2" title="main">
+                    <#if menuState.main>
+                        <div style="color:green">Main</div>
+                    <#else>
+                        Main
+                    </#if>
+                </a>
+            </li>
 		</u>
 	</nav>
 	<hr />
