@@ -12,7 +12,7 @@ public class DrawSchedule implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "draw_schedule_generator")
 	private Integer id;
     @OneToOne
-    @JoinColumn(name = "game_type_id")
+    @JoinColumn (name = "game_type_id")
 	private GameType gameType;
     private Boolean sun;
     private Boolean mon;
@@ -101,4 +101,5 @@ public class DrawSchedule implements Serializable {
     public void setHour(Integer hour) {
         this.hour = hour;
     }
+
 }
