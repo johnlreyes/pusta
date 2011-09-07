@@ -1,3 +1,5 @@
-1. for invoking liquibase use:
+1. read runtime/README
+
+2. for invoking liquibase use:
    mvn process-resources -Pliquibase
    
