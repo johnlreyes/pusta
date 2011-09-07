@@ -1,0 +1,10 @@
+1. download hsqldb
+   http://sourceforge.net/projects/hsqldb/files/hsqldb/
+
+2. extract contents to hsqldb, folder structure should be
+   hsqldb (existing)
+     ->bin
+     ->build
+     ...
+     
+3. run runDB.bat    

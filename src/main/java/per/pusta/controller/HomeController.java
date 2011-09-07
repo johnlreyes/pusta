@@ -1,13 +1,15 @@
 package per.pusta.controller;
 
 import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import per.pusta.controller.util.MenuState;
+
+import per.pusta.controller.util.MenuStateBean;
 
 @Controller
 public class HomeController {
@@ -17,7 +19,7 @@ public class HomeController {
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model model) {
 		logger.info("Welcome home!");
-        MenuState menuState = new MenuState();
+        MenuStateBean menuState = new MenuStateBean();
         menuState.setHome(true);
 
         model.addAttribute("menuState", menuState);

@@ -14,29 +14,59 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 		<jetty.version>6.1.4</jetty.version>
-		<spring.version>3.0.5.RELEASE</spring.version>
 		<slf4j.version>1.5.10</slf4j.version>
 		<java.version>1.5</java.version>
 		<junit.version>4.8.2</junit.version>
+		<org.hibernate.version>4.0.0.GA</org.hibernate.version>
+		
+		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>		
+		<org.hsqldb.version>2.2.4</org.hsqldb.version>
+		<org.projectlombok.version>0.10.0</org.projectlombok.version>
+		<org.freemarker.version>2.3.16</org.freemarker.version>
 	</properties>
 
 	<dependencies>
-
+		
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${org.freemarker.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${org.hsqldb.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${org.projectlombok.version}</version>
+		</dependency>
+	
+	
+	
+		
+		
+		
 
 		<!-- Bean Validation Dependencies -->
-
+		<!--  
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>1.0.0.GA</version>
 			<scope>compile</scope>
 		</dependency>
-
+		-->
+		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.0.0.GA</version>
+			<version>${org.hibernate.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -49,12 +79,7 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.10</version>
-		</dependency>
-
+		
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -67,7 +92,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
+			<version>${org.springframework.version}</version>
 			<exclusions>
 				<!-- Exclude Commons Logging in favor of SLF4j -->
 				<exclusion>
@@ -80,12 +105,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
+			<version>${org.springframework.version}</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
@@ -93,7 +118,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
+			<version>${org.springframework.version}</version>
 			<type>jar</type>
 			<scope>test</scope>
 		</dependency>
@@ -125,21 +150,9 @@
 			<scope>compile</scope>
 		</dependency>
 		-->
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-			<version>2.3.16</version>
-		</dependency>
+		
 
-
-		<!-- Test Dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
+		
 		<!-- logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -175,7 +188,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-
+		
 	</dependencies>
 
 	<repositories>
@@ -248,6 +261,13 @@
 	<profiles>
 		<profile>
 			<id>liquibase</id>
+			<dependencies>
+				<dependency>
+				    <groupId>org.liquibase</groupId>
+				    <artifactId>liquibase-core</artifactId>
+				    <version>2.0.1</version>
+				</dependency>
+			</dependencies>
 			<build>
 				<plugins>
 					<plugin>
@@ -258,8 +278,15 @@
 							<execution>
 								<phase>process-resources</phase>
 								<configuration>
-									<propertyFile>src/main/liquibase/liquibase.properties</propertyFile>
-                                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+									<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+									<driver>org.hsqldb.jdbc.JDBCDriver</driver>                    
+									<url>jdbc:hsqldb:database/pustaDB</url>
+									<username>SA</username>
+									<password></password>
+									<verbose>true</verbose>
+									<dropFirst>true</dropFirst>
+									<changeLogFile>src/main/liquibase/master.xml</changeLogFile>
+									
 								</configuration>
 								<goals>
 									<goal>update</goal>

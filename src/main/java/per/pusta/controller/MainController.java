@@ -6,7 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import per.pusta.controller.util.MenuState;
+
+import per.pusta.controller.util.MenuStateBean;
 
 @Controller
 public class MainController {
@@ -16,7 +17,7 @@ public class MainController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String loginForm(Model model) {
 		logger.info("Main");
-        MenuState menuState = new MenuState();
+        MenuStateBean menuState = new MenuStateBean();
         menuState.setMain(true);
 
         model.addAttribute("menuState", menuState);

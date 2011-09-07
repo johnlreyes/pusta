@@ -1,43 +1,33 @@
 package per.pusta.service.impl.jpa.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "user_combination")
 public class UserCombination implements Serializable {
-    @Id
-    @SequenceGenerator(name = "user_combination_generator", sequenceName = "seq_user_combination", allocationSize = 1, initialValue = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_combination_generator")
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@SequenceGenerator(name = "user_combination_generator", sequenceName = "seq_user_combination", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_combination_generator")
 	private Integer id;
-    @OneToOne
-    @JoinColumn (name = "user_draw_id")
+	@OneToOne
+	@JoinColumn(name = "user_draw_id")
 	private UserDraw userDraw;
-    @OneToOne
-    @JoinColumn (name = "game_combination_id")
+	@OneToOne
+	@JoinColumn(name = "game_combination_id")
 	private GameCombination gameCombination;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public UserDraw getUserDraw() {
-        return userDraw;
-    }
-
-    public void setUserDraw(UserDraw userDraw) {
-        this.userDraw = userDraw;
-    }
-
-    public GameCombination getGameCombination() {
-        return gameCombination;
-    }
-
-    public void setGameCombination(GameCombination gameCombination) {
-        this.gameCombination = gameCombination;
-    }
 }

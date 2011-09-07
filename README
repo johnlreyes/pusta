@@ -1,0 +1,3 @@
+1. for invoking liquibase use:
+   mvn process-resources -Pliquibase
+   
